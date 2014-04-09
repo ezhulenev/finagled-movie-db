@@ -3,7 +3,11 @@ package com.fmdb
 import com.fmdb.model.{Cast, Person, Genre, Movie}
 import org.joda.time.LocalDate
 
-object InMemoryMovieDatabase {
+/**
+ * Fancy Movie Database access layer.
+ * In real application it can be JDBC or any other blocking resource
+ */
+object MovieDatabaseAccess {
 
   private val QuentinTarantino = Person("Quentin",   "Tarantino",  new LocalDate(1963,  3, 27))
   private val JamieFoxx        = Person("Jamie",     "Foxx",       new LocalDate(1967, 12, 13))
