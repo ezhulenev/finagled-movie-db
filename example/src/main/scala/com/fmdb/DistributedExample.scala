@@ -25,8 +25,8 @@ object DistributedExample extends App {
   val leoMovies = Await.result(Services.movies(leo), 1.second)
 
 
-  println(s"Movies with $leo:")
-  leoMovies.foreach(println)
+  println(s"Movies with ${leo.firstName} ${leo.secondName}:")
+  leoMovies.map(m => s" - ${m.title}, ${m.year}").foreach(println)
 
   // Shutdown
   server.close()
